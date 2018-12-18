@@ -1,0 +1,18 @@
+<div class="panel panel-default" *ngFor="let a of answers.items">
+  <div class="panel-heading">
+    <!-- <a class="panel-title">{{a.link}}</a> -->
+    <a class="panel-title"><strong>{{a.owner.display_name}}</strong></a>
+  </div>
+  <div class="panel-body">
+   <strong>User ID</strong>{{a.owner.user_id}} <br/>
+   <strong>User type</strong>{{a.owner.user_type}}<br/>
+   <strong>Profile Image</strong><img src="{{a.owner.profile_image}}" alt="" height="35px" width="35px">  <br/>
+   <strong>Reputation</strong> {{a.owner.reputation}}<br/>
+   <strong>Accepted</strong>{{a.is_accepted}}<br/>
+   <strong>Score</strong>{{a.score}}<br/>
+   <strong>Last Activity</strong> {{a.last_activity_date}}<br/>
+   <strong>Creation Date</strong>{{a.creation_date}}<br/>
+   <strong>Answer ID</strong> {{a.answer_id}}
+  </div>
+</div>
+<button type="button" class="btn btn-primary" (click)="backToList()">Back to Search <span class="glyphicon glyphicon-triangle-left"></span></button>

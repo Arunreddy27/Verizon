@@ -1,0 +1,24 @@
+<h1>StackOverflow App</h1>
+<div class="col-lg-12">
+  <div class="input-group">
+     <input type="text" class="form-control" name="keyword" [(ngModel)]="keyword" placeholder="Search stackoverflow">
+    <span class="input-group-btn">
+      <button class="btn btn-primary" type="button" (click)="search()" >Go!</button>
+    </span>
+  </div>
+</div>
+
+<div class="panel panel-default" *ngFor="let q of questions.items">
+  <div class="panel-heading">
+    <a class="panel-title" href='#' [routerLink]="['answers',q.question_id]">{{q.title}}</a>
+  </div>
+  <div class="panel-body">
+    Score: {{q.score}}<br/>
+    Answer: {{q.is_answered}}<br/>
+    Number of Views: {{q.view_count}}<br/>
+    Tags:{{q.tags}}<br/>
+    Activity:{{q.last_activity_date}}<br/>
+    Accepted Answer:{{q.accepted_answer_id}}<br/>
+  </div>
+</div>
+
